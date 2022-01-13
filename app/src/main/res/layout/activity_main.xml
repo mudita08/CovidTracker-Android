@@ -1,18 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/topbg"
+    android:background="@color/relative_bg">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:textSize= "29sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/covid_19"></TextView>
+
+            <com.hbb20.CountryCodePicker
+                android:layout_width="100dp"
+                android:layout_height="67dp"
+                app:ccp_autoDetectCountry="true"
+                android:layout_marginLeft="20dp"
+                app:ccp_showPhoneCode="false"
+                app:ccp_showFullName="false"
+                android:background="@drawable/country_code_drawable"
+                android:padding="5dp"
+                android:id="@+id/ccp"
+                android:layout_marginRight="20dp"
+                app:ccp_textSize="12dp"></com.hbb20.CountryCodePicker>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <org.eazegraph.lib.charts.PieChart
+                android:id="@+id/piechart"
+                android:layout_width="220dp"
+                android:layout_height="180dp"
+                android:padding="8dp"
+                app:egUsePieRotation="true"
+                app:egLegendTextSize="8sp"
+                app:egValueTextSize="15sp"></org.eazegraph.lib.charts.PieChart>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+</RelativeLayout>
