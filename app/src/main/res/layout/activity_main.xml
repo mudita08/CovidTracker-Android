@@ -33,7 +33,7 @@
 
             <com.hbb20.CountryCodePicker
                 android:layout_width="100dp"
-                android:layout_height="63dp"
+                android:layout_height="57dp"
                 app:ccp_autoDetectCountry="true"
                 android:layout_marginLeft="20dp"
                 app:ccp_showPhoneCode="false"
